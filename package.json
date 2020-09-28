@@ -1,0 +1,21 @@
+{
+    "name": "mercurio",
+    "version": "0.1.0",
+    "description": "Deliver posts on your Facebook timeline to a Telegram channel",
+    "main": "index.js",
+    "author": "Giovanni Orciuolo",
+    "license": "MIT",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development nodemon index.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cross-env": "^7.0.2",
+        "dotenv-flow": "^3.2.0",
+        "express": "^4.17.1",
+        "express-x-hub": "^1.0.4",
+        "moment": "^2.29.0",
+        "node-fetch": "^2.6.1",
+        "nodemon": "^2.0.4"
+    }
+}
