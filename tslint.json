@@ -1,0 +1,32 @@
+{
+	"rules": {
+		"await-promise": true,
+		"no-angle-bracket-type-assertion": true,
+		"no-boolean-literal-compare": true,
+		"no-empty-interface": true,
+		"no-inferred-empty-object-type": true,
+		"class-name": true,
+		"comment-format": [
+			true,
+			"check-space"
+		],
+		"indent": [
+			true,
+			"spaces"
+		],
+		"no-var-keyword": true,
+		"quotemark": [
+			true,
+			"double",
+			"avoid-escape"
+		],
+		"semicolon": [
+			true,
+			"always",
+			"ignore-bound-class-methods"
+		],
+		"no-internal-module": true,
+		"prefer-const": true,
+		"jsdoc-format": true
+	}
+}
