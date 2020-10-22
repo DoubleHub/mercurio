@@ -13,10 +13,12 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"inlineSourceMap": true,
-		"target": "es6",
+		"target": "es5",
 		"baseUrl": "src",
 		"paths": {
-			"@env": [ "env.ts" ]
+			"@env": [ "env.ts" ],
+			"@routes": [ "routes/*" ],
+			"@utils": [ "utils/*" ]
 		},
 		"lib": [
 			"dom",

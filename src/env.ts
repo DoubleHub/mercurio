@@ -11,20 +11,34 @@ export interface Environment {
 	};
 }
 
-function setup_env(): Environment {
+const env_keys = {
+	host: "HOST",
+	port: "PORT",
+	fb: {
+		verify_token: "FB_VERIFY_TOKEN",
+		app_secret: "FB_APP_SECRET",
+		access_token: "FB_ACCESS_TOKEN",
+		user_id: "FB_USER_ID"
+	}
+};
+
+export function get_env(): Environment {
+	const env = process.env;
+	return {
+		host: env[env_keys.host],
+		port: parseInt(env[env_keys.port]),
+		fb: {
+			verify_token: env[env_keys.fb.verify_token],
+			app_secret: env[env_keys.fb.app_secret],
+			access_token: env[env_keys.fb.access_token],
+			user_id: env[env_keys.fb.user_id],
+		}
+	}
+}
+
+export function setup_env(): Environment {
 	dotenv_flow.config({ purge_dotenv: true });
 	const env = process.env;
-
-	const env_keys = {
-		host: "HOST",
-		port: "PORT",
-		fb: {
-			verify_token: "FB_VERIFY_TOKEN",
-			app_secret: "FB_APP_SECRET",
-			access_token: "FB_ACCESS_TOKEN",
-			user_id: "FB_USER_ID"
-		}
-	};
 
 	const checkFalsyValues = (root: object, key: string) => {
 		if (!(env_keys[key] instanceof Object)) {
@@ -53,5 +67,3 @@ function setup_env(): Environment {
 		}
 	}
 }
-
-export const env = setup_env();
